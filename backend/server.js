@@ -61,6 +61,20 @@ app.get('/retrive', async(req,res)=>{
     }
 })
 
+app.delete('/delete:imageId',async(req,res)=> {
+    try {
+
+        let {imageId} = req.params
+        // console.log(imageId);
+        let result = await imageModel.findByIdAndDelete(imageId)
+
+        res.status(200).send({data:result})
+        
+    } catch (error) {
+        res.status(404).send({msg:error})
+    }
+})
+
 
 
 // 404 erro-page setting up
