@@ -1,5 +1,6 @@
 # Webnox Project
-Hi there 👋 , in this project i construct my own auth implementation with Reactjs for front-end , Nodejs &amp; Expressjs for backend , MongoDB for Database
+Hi there 👋 , in this project i create an image upload system with a grid layout. The grid layout should dynamically adjust its rows and columns based on user input. Users should be able to register, login, upload images, and view uploaded images in a grid format.
+
 
 # Getting Started with Create React App
 
