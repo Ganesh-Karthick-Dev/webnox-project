@@ -1,5 +1,34 @@
 # Description
-Hi there 👋 , in this project i create an image upload system with a grid layout. The grid layout should dynamically adjust its rows and columns based on user input. Users should be able to register, login, upload images, and view uploaded images in a grid format.
+
+Hi there 👋 i'm ganesh karthick , in this project i create an image upload system with a grid layout. The grid layout should dynamically adjust its rows and columns based on user input. Users should be able to register, login, upload images, and view uploaded images in a grid format.
+
+# Technologies used
+
+Front-end :- Reactjs ( framework ) & tailwindcss ( css framework )
+
+Back-end :- Nodejs & Expressjs to handle API operations
+
+Database :- Nosql ( MongoDB )
+
+# Instructions to run this project
+
+step 1 - clone this github project into local machine
+
+step 2 - open terminal
+
+step 3 - navigate to frontend folder using cd frontend
+
+step 4 - npm install ( this will install all the required dependencies to run this project )
+
+step 5 - after did above 4 steps , type npm start to run client view
+
+step 6 - open another terminal
+
+step 7 - navigate to backend folder using cd frontend
+
+step 8 - repeat step 4
+
+step 9 - type npm start to run server
 
 
 # Getting Started with Create React App
