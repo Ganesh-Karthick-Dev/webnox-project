@@ -15,6 +15,6 @@ const userScheme = new mongoose.Schema(
     },{timestamps:true,versionKey:false}
 )
 
-const userModel = mongoose.model('imagedata',userScheme);
+const userModel = mongoose.model('user',userScheme);
 
 module.exports = userModel ;

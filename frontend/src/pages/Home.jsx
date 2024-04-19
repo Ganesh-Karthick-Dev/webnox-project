@@ -17,8 +17,8 @@ const Home = () => {
     }
     
     <h1>Welcome to Dashboard , after successfull user Authentication 🥳 !</h1>
-    
     <Navbar />
+    
     </>
   )
 }

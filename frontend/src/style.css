@@ -2,13 +2,13 @@
 
 
 /* auth page */
-#login-right {
+/* #login-right {
     height: 100vh;
     background-image: url('./assest/photos/authBg4.jpeg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
+} */
 #login {
     background-image: url(./assest/others/bg-1.jpeg);
    
@@ -16,18 +16,18 @@
 #signup {
     background-image: url(./assest/others/bg-1.jpeg);
 }
-#signup-left {
+/* #signup-left {
     height: 100vh;
     background-image: url('./assest/photos/authBg1.jpeg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-}
+} */
 
 
 /* navbar */
 
-#nav-logo {
+/* #nav-logo {
     background-image: url(./assest/icons/main-logo.png);
     width: 100px;
-}
+} */
