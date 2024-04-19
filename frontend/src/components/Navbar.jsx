@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
 import "../style.css";
-import {  useNavigate } from "react-router-dom";
+import {  NavLink, useNavigate } from "react-router-dom";
 import { userContext } from "../hooks/userContext";
-import ImageUpload from './ImageUpload'
-import ImageRetrive from './ImageRetrive'
+
 
 
 const Navbar = () => {
@@ -19,7 +18,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav id="navbar">
+      <nav id="navbar" className=" border bg-gray-50 py-2 rounded-md">
         {/* mobile screens */}
 
         
@@ -27,9 +26,16 @@ const Navbar = () => {
         {/* desktop screens */}
 
         <div
-          className=" flex justify-end w-full "
+          className=" flex justify-around w-full "
           id="nav-desktop"
         >
+          <div className=" flex gap-4">
+
+            <NavLink className={' border-b-2 border-white align-middle px-3 py-2 hover:border-green-400 hover:border-b-2'} to={''}>Upload Image</NavLink>
+            <NavLink className={' border-b-2 border-white align-middle px-3 py-2 hover:border-green-400 hover:border-b-2'} to={'retrive'}>Gallery</NavLink>
+
+          </div>
+
           <div className="" id="nav-right">
             <button
               className=" border border-red-500 px-3 rounded-md hover:bg-red-500 hover:text-white hover:border-red-700 py-2"
@@ -40,8 +46,8 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
-      <ImageUpload />
-      <ImageRetrive />
+      {/* <ImageUpload />
+      <ImageRetrive /> */}
     </>
   );
 };

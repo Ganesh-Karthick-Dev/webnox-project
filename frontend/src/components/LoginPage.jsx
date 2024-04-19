@@ -47,7 +47,7 @@ const LoginPage = () => {
       <div className=" md:flex bg-grey-100">
         <div
           id="login"
-          className=" sm:w-full flex flex-col py-9 justify-center items-center font-primary"
+          className=" sm:w-full flex flex-col py-10 h-screen justify-center items-center font-primary"
         >
           <div id="login-box" className=" border border-gray-700 shadow-lg bg-white shadow-slate-600 px-8 py-8 rounded-md">
             <h1 className=" text-center">
@@ -55,11 +55,15 @@ const LoginPage = () => {
               Started !
             </h1>
 
-            <h1 className=" text-red-800 text-center font-extrabold text-4xl">
+            {
+              res !== '' && <h4 className=" text-red-500 border border-red-500 rounded-md mt-2  text-center font-extrabold text-xl">
               {res}
-            </h1>
+            </h4>
+            }
 
-            <div className=" sm:w-full md:w-fit p-5 m-5 flex flex-col gap-8">
+            
+
+            <div className=" sm:w-full md:w-fit p-5  flex flex-col gap-4">
               <table className="">
                 <tbody>
                   <tr className=" flex flex-col gap-2 mb-3">
@@ -72,7 +76,7 @@ const LoginPage = () => {
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         id="username"
-                        className=" border w-full border-zinc-300 rounded-md"
+                        className=" border w-full border-zinc-300 rounded-md p-2"
                       />
                     </td>
                   </tr>
@@ -86,7 +90,7 @@ const LoginPage = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         id="password"
-                        className=" border w-full border-zinc-300 rounded-md"
+                        className=" border w-full border-zinc-300 rounded-md p-2"
                       />
                     </td>
                   </tr>

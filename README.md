@@ -1,4 +1,4 @@
-# Webnox Project
+# Description
 Hi there 👋 , in this project i create an image upload system with a grid layout. The grid layout should dynamically adjust its rows and columns based on user input. Users should be able to register, login, upload images, and view uploaded images in a grid format.
 
 

@@ -9,6 +9,8 @@ import LoginPage from "./components/LoginPage";
 import SignupPage from "./components/SignupPage";
 import Home from "./pages/Home";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import ImageUpload from "./components/ImageUpload";
+import ImageRetrive from "./components/ImageRetrive";
 
 function App() {
   const router = createBrowserRouter(
@@ -16,7 +18,10 @@ function App() {
       <Route path="/" element={<AuthPage />}>
         <Route index element={<LoginPage />} />
         <Route path="signup" element={<SignupPage />} />
-        <Route path="home" element={<Home />} />
+        <Route path="home" element={<Home />} >
+          <Route index element={<ImageUpload />} />
+          <Route path="retrive" element={<ImageRetrive />}/>
+        </Route>
       </Route>
     )
   );

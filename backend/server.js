@@ -2,17 +2,64 @@
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
+const multer = require('multer')
+// const path = require('path')
 const userRouter = require('./routes/userRoutes')
+const imageModel = require('./model/imageModel')
 
 const app = express();
 
-
+// middlewares
 app.use(express.json())
 app.use(cors({origin:true}))
-
+app.use(express.static('uploads'))
 
 // routes
 app.use('/user',userRouter)
+
+
+// multer configuration
+const storage = multer.diskStorage({
+    destination : (req,file,cb)=> {
+        cb(null,'uploads')
+    },
+    filename : (req,file,cb)=>{
+        cb(null,file.originalname)
+    }
+})
+
+const upload = multer({
+    storage : storage
+})
+
+
+
+// routes to upload image to database
+app.post('/upload', upload.single('file'), async(req,res)=>{
+
+    // console.log(req.file);
+    try {
+        await imageModel.create({image:req.file.originalname})
+                .then(data => res.send(data))
+                .catch((err)=>{
+                    console.log(err);
+                })
+    } catch (error) {
+        console.log(error);
+    }
+})
+
+app.get('/retrive', async(req,res)=>{
+    try {
+
+        let data = await imageModel.find()
+
+        res.status(200).send({data:data})
+        
+    } catch (error) {
+        res.status(404).send({msg:error})
+    }
+})
 
 
 
