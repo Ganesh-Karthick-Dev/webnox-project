@@ -1,6 +1,3 @@
-# Webnox Project
-Hi there 👋 , in this project i construct my own auth implementation with Reactjs for front-end , Nodejs &amp; Expressjs for backend , MongoDB for Database
-
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -71,7 +68,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-### Author
-
-Ganesh Karthick
