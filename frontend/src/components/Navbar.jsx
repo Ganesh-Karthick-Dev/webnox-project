@@ -18,7 +18,7 @@ const Navbar = () => {
   };
   return (
     <>
-      <nav id="navbar" className=" border bg-gray-50 py-2 rounded-md">
+      <nav id="navbar" className=" border bg-gray-50 py-2 rounded-md sticky top-0 z-10">
         {/* mobile screens */}
 
         

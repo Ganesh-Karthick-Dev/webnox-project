@@ -3,6 +3,7 @@ import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import axios from 'axios'
+import '../style.css'
 // import ErrorNotification from './ErrorNotification';
 // import SuccessNotification from './SuccessNotification';
 
@@ -72,7 +73,11 @@ const ImageUpload = () => {
               console.log(res.data);
             })
             .catch((err)=>{
-              console.log(err,"error while sent data to backend");
+              // console.log(err,"error while sent data to backend");
+              let data = err.response.data.err
+              console.log(data);
+              setSuccessMsg('')
+              setUploadError(data)
             })
 
       setTimeout(()=>{
@@ -85,7 +90,7 @@ const ImageUpload = () => {
 
   return (
     <>
-    <div className=' mt-3 flex flex-col gap-3 text-sm'>
+    <div id='img-upload' className=' pt-4 flex flex-col gap-3 text-sm h-screen'>
     <h4 className=' text-center font-bold'>Upload Your Image Here</h4>
     
       <form className=' flex flex-col mx-auto w-fit' onSubmit={handleUpload}>

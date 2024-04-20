@@ -1,8 +1,8 @@
-
 const express = require('express')
 const cors = require('cors')
 const mongoose = require('mongoose')
 const multer = require('multer')
+const fs = require('fs')
 // const path = require('path')
 const userRouter = require('./routes/userRoutes')
 const imageModel = require('./model/imageModel')
@@ -39,6 +39,13 @@ app.post('/upload', upload.single('file'), async(req,res)=>{
 
     // console.log(req.file);
     try {
+
+        let existImage = await imageModel.findOne({image:req.file.originalname})
+
+        if(existImage){
+            throw new Error(`image already exist !`)
+        }
+
         await imageModel.create({image:req.file.originalname})
                 .then(data => res.send(data))
                 .catch((err)=>{
@@ -46,6 +53,7 @@ app.post('/upload', upload.single('file'), async(req,res)=>{
                 })
     } catch (error) {
         console.log(error);
+        res.status(404).send({err:`image already exist !`})
     }
 })
 
@@ -67,6 +75,14 @@ app.delete('/delete:imageId',async(req,res)=> {
         let {imageId} = req.params
         // console.log(imageId);
         let result = await imageModel.findByIdAndDelete(imageId)
+        
+        let data = result.image
+
+        const filePath = `./uploads/${data}`
+
+        fs.unlink(filePath,(err)=>{
+            console.log(`got error while delete image from uploads folder`);
+        })
 
         res.status(200).send({data:result})
         

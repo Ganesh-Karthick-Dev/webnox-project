@@ -54,7 +54,7 @@ const SignupPage = () => {
             {/* <h1><span className=' text-3xl'>C</span>reate a new user here !</h1> */}
 
             {
-              res !== "" && <h4 className=" text-red-500 border border-red-500 rounded-md mt-2  text-center font-extrabold text-xl">
+              res !== "" && <h4 className=" text-red-500 border shadow-md p-2 border-red-500 rounded-md mt-2  text-center font-extrabold text-xl">
               {res}
             </h4>
             }

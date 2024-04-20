@@ -2,6 +2,16 @@
 
 Hi there 👋 i'm ganesh karthick , in this project i create an image upload system with a grid layout. The grid layout should dynamically adjust its rows and columns based on user input. Users should be able to register, login, upload images, and view uploaded images in a grid format.
 
+# Notes
+
+1 - if you are trying to login using your google account , sometimes it will not work - because i just used that google login under TEST mode , means only test users can able to authenticate .
+
+2 - don't worry here is email address with password 😊 !
+
+3 - email - jaikarthick24697@gmail.com
+
+4 - password - ganesh@18697
+
 # Technologies used
 
 Front-end :- Reactjs ( framework ) & tailwindcss ( css framework )
@@ -31,9 +41,18 @@ step 8 - repeat step 4
 step 9 - type npm start to run server
 
 
-# Getting Started with Create React App
+# Instructions before run this project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1 - only valid users can able to login 
+
+2 - you must have to signup , if you are a new user
+
+3 - or use your google account to login
+
+4 - to delete a image in the gallery section - hover top right corner of the image to get delete button to delete that image
+
+5 - and a important feature , you can dynamically adjust grid layout !
+
 
 ## Available Scripts
 
@@ -52,7 +71,7 @@ You may also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### `npm run build` to make a build file
 
 Builds the app for production to the `build` folder.\
 It correctly bundles React in production mode and optimizes the build for the best performance.
@@ -72,35 +91,6 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 ### Author
 
