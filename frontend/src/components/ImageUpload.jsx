@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
@@ -26,6 +26,15 @@ const ImageUpload = () => {
   }
 
   // pop over
+
+  useEffect(()=>{
+
+    window.scrollTo({
+      top:0,
+      behavior:'smooth'
+    })
+
+  },[])
 
   const [file,setFile] = useState(null)
   // const [text,setText] = useState('')

@@ -49,7 +49,7 @@ step 9 - type npm start to run server
 
 3 - or use your google account to login
 
-4 - to delete a image in the gallery section - hover top right corner of the image to get delete button to delete that image
+4 - to delete a image in the gallery section - hover the image to get delete button to delete that image
 
 5 - and a important feature , you can dynamically adjust grid layout !
 

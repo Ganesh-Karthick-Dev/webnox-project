@@ -4,7 +4,7 @@ import '../style.css'
 
 const ImageRetrive = () => {
 
-  const [image, setImage] = useState(null);
+  const [image, setImage] = useState([]);
 
   const [grid, setGrid] = useState("");
 
@@ -48,12 +48,23 @@ const ImageRetrive = () => {
 
   }, [handleDelImg]);
 
+  useEffect(()=>{
+
+    window.scrollTo({
+      top:0,
+      behavior:'smooth'
+    })
+
+  },[])
+
+  // console.log();
+
   return (
     <>
       <div id='img-upload'>
 
 
-        <div className=" flex py-3 gap-3 justify-center">
+        <div className=" flex py-3 gap-3 justify-center ">
         <div className=" transition hover:-translate-y-1" onClick={() => setGrid("grid-cols-1")}>
             <svg
               className=" w-6"
@@ -219,14 +230,14 @@ const ImageRetrive = () => {
           </div>
         </div>
 
-        <div id="img-container" className={`grid ${grid} gap-2 `}>
+        <div id="img-container" className={`grid ${grid} gap-2`}>
 
         {
         image !== null &&
           image.map((val) => {
             return (
               
-                <div id="img" className=" border flex relative" key={val.id}>
+                <div id="img" className=" border flex text-center relative" key={val.id}>
                 <img
                   className=" object-cover w-fit"
                   src={`http://localhost:8000/${val.image}`}
@@ -240,11 +251,16 @@ const ImageRetrive = () => {
                 </div>
               
             );
-          })
-          
+          }) 
+        
           }
 
+
         </div>
+
+        {
+          image !== null && image.length === 0  ? <h2 className=" h-screen flex justify-center items-center text-2xl font-bold">Gallery is empty , nothing to show</h2> : ''
+        }
 
       </div>
     </>
