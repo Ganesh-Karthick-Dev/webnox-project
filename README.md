@@ -47,11 +47,13 @@ step 9 - type npm start to run server
 
 2 - you must have to signup , if you are a new user
 
-3 - or use your google account to login
+3 - or use your google account to login ⚡
 
-4 - to delete a image in the gallery section - hover the image to get delete button to delete that image
+4 - to delete a image in the gallery section - hover the image to get delete button to delete that image ⚡
 
-5 - and a important feature , you can dynamically adjust grid layout !
+5 - and a important feature , you can dynamically adjust grid layout ⚡
+
+6 - click on the image to view that image in a model view ⚡
 
 
 ## Available Scripts
