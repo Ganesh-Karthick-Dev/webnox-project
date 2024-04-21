@@ -44,7 +44,7 @@ const SignupPage = () => {
 <div className=" md:flex bg-grey-100">
         <div
           id="signup"
-          className=" sm:w-full py-20 flex flex-col order-2 justify-center items-center font-primary"
+          className=" sm:w-full h-screen flex flex-col order-2 justify-center items-center font-primary"
         >
           <div className=" border shadow-lg bg-white shadow-slate-600 px-8 py-8 rounded-md">
             <h1 className=" text-center">
@@ -53,9 +53,13 @@ const SignupPage = () => {
 
             {/* <h1><span className=' text-3xl'>C</span>reate a new user here !</h1> */}
 
-            <h1 className=" text-red-800 text-center font-extrabold text-4xl">
+            {
+              res !== "" && <h4 className=" text-red-500 border shadow-md p-2 border-red-500 rounded-md mt-2  text-center font-extrabold text-xl">
               {res}
-            </h1>
+            </h4>
+            }
+
+            
 
             <div className=" sm:w-full md:w-fit p-5 m-5 flex flex-col gap-8">
               <table className="">
@@ -70,7 +74,7 @@ const SignupPage = () => {
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         id="username"
-                        className=" border w-full border-zinc-300 rounded-md"
+                        className=" border w-full border-zinc-300 rounded-md p-2"
                       />
                     </td>
                   </tr>
@@ -84,7 +88,7 @@ const SignupPage = () => {
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         id="password"
-                        className=" border w-full border-zinc-300 rounded-md"
+                        className=" border w-full border-zinc-300 rounded-md p-2"
                       />
                     </td>
                   </tr>

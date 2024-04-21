@@ -24,11 +24,12 @@ const createUser = async (req, res) => {
 // for login
 const checkUser = async (req,res)=> {
   let clientData = req.body ;
-  // console.log(clientData);
+  console.log(clientData);
   try {
     let existUser = await userModel.findOne({username:clientData.username})
+    let existUserPass = await userModel.findOne({password:clientData.password})
     // console.log(existUser);
-    if(clientData.username  === existUser.username ){
+    if(clientData.username  === existUser.username && clientData.password === existUserPass.password ){
       res.status(200).send({val:"user found - welcome to Dashboard !"})
     }
     else{

@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import axios from 'axios'
+import '../style.css'
 // import ErrorNotification from './ErrorNotification';
 // import SuccessNotification from './SuccessNotification';
 
@@ -26,8 +27,17 @@ const ImageUpload = () => {
 
   // pop over
 
+  useEffect(()=>{
+
+    window.scrollTo({
+      top:0,
+      behavior:'smooth'
+    })
+
+  },[])
+
   const [file,setFile] = useState(null)
-  const [text,setText] = useState('')
+  // const [text,setText] = useState('')
   const [uploadError,setUploadError] = useState('');
   const [successMsg,setSuccessMsg] = useState('');
 
@@ -61,16 +71,22 @@ const ImageUpload = () => {
       setSuccessMsg(`image uploded successfully`)
       console.log(`image uploded successfully`);
 
+      let formdata = new FormData()
+      formdata.append('file',file)
+
+
         axios 
-            .post('http://localhost:8000/image/upload',{
-              name : text,
-              image : file
-            })
-            .then(()=>{
+            .post(`http://localhost:8000/upload`,formdata)
+            .then((res)=>{
               console.log(`image sent to backend`);
+              console.log(res.data);
             })
             .catch((err)=>{
-              console.log(err,"error while sent data to backend");
+              // console.log(err,"error while sent data to backend");
+              let data = err.response.data.err
+              console.log(data);
+              setSuccessMsg('')
+              setUploadError(data)
             })
 
       setTimeout(()=>{
@@ -83,27 +99,29 @@ const ImageUpload = () => {
 
   return (
     <>
-    <div className=' font-primary text-sm'>
-    <h4>Upload Your Image Here</h4>
+    <div id='img-upload' className=' pt-4 flex flex-col gap-3 text-sm h-screen'>
+    <h4 className=' text-center font-bold'>Upload Your Image Here</h4>
     
-      <form className=' flex flex-col w-fit' onSubmit={handleUpload}>
+      <form className=' flex flex-col mx-auto w-fit' onSubmit={handleUpload}>
 
         <input type="file" className=' text-xs my-3' onChange={val => setFile(val.target.files[0])} />
 
-        <input type="text" value={text} onChange={e=>setText(e.target.value)} className=' border border-gray-500'/>
+        {/* <input type="text" value={text} onChange={e=>setText(e.target.value)} className=' border border-gray-500'/> */}
 
         <button 
         type='submit'
-        className=' bg-green-400 p-2 rounded-md text-green-800 hover:text-white hover:bg-green-600'
+        className=' bg-green-400 p-2 hover:shadow-lg rounded-md text-green-800 hover:text-white hover:bg-green-600'
         >Upload</button>
       </form>
 
+    
       {
-        <h4 className=' text-green-500'>{successMsg}</h4>
+       successMsg !== '' && <h4 className=' text-green-500 text-center mx-auto p-2 w-fit border border-green-500 rounded-md'>{successMsg}</h4>
       }
+      
 
 
-      <div className=' p-4 m-2 w-fit border'>
+      <div className=' p-4 m-2 w-fit mx-auto border shadow-lg'>
       <h4 className=' font-bold'>Note : </h4>
       <h4>➡️:-file size should be less than 2MB</h4>
       <h4>➡️:-file type should be jpeg , png</h4>

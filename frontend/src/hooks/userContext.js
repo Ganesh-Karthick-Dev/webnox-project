@@ -11,10 +11,13 @@ const UserContextProvider = (props)=> {
     console.log(val);
 
     const addUser = (userName)=> {
-        setVal(userName)
+        // setVal(userName)
+        localStorage.setItem('username',userName)
     }
     const removeUser = ()=>{
-        setVal('')
+        // setVal('')
+        localStorage.removeItem('username')
+        localStorage.clear()
     }
 
     return (
